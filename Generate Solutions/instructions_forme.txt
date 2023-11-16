@@ -1,0 +1,5 @@
+Populate scrambles.txt with scrambles (Remember a newline at the end)
+
+Run [  ./run_solver.sh  ] in the terminal from Cube-Solver folder
+
+The results are stored in results.txt
