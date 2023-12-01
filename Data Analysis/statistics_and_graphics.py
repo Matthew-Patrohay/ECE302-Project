@@ -5,14 +5,12 @@ import numpy as np
 import pandas as pd
 import re
 
-# Set font sizes globally
 plt.rcParams.update({'font.size': 14})
 plt.rcParams['axes.titlesize'] = 22
 plt.rcParams['axes.labelsize'] = 22
 plt.rcParams['xtick.labelsize'] = 18
 plt.rcParams['ytick.labelsize'] = 18
 plt.rcParams['legend.fontsize'] = 18
-
 
 def natural_sort_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split('([0-9]+)', s)]
