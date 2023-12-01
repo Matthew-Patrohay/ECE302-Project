@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.13)  1 DEC 2023 00:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.13)  1 DEC 2023 00:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -612,94 +612,94 @@ been already used, duplicate ignored
                    \relax 
 l.54 \newpage
               [1]
-<complete-cube-notations.png, id=126, 491.8375pt x 249.93375pt>
+<complete-cube-notations.png, id=131, 491.8375pt x 249.93375pt>
 File: complete-cube-notations.png Graphic file (type png)
 <use complete-cube-notations.png>
 Package pdftex.def Info: complete-cube-notations.png  used on input line 70.
 (pdftex.def)             Requested size: 198.7425pt x 100.99379pt.
  [2 <./complete-cube-notations.png>] [3] [4] [5] [6] [7]
-<Figure_1.png, id=169, 1011.78pt x 505.89pt>
+<Figure_1.png, id=174, 1011.78pt x 505.89pt>
 File: Figure_1.png Graphic file (type png)
 <use Figure_1.png>
 Package pdftex.def Info: Figure_1.png  used on input line 149.
 (pdftex.def)             Requested size: 433.62pt x 216.81056pt.
-<Figure_2.png, id=170, 1011.78pt x 505.89pt>
+<Figure_2.png, id=175, 1011.78pt x 505.89pt>
 File: Figure_2.png Graphic file (type png)
 <use Figure_2.png>
 Package pdftex.def Info: Figure_2.png  used on input line 160.
 (pdftex.def)             Requested size: 433.62pt x 216.81056pt.
 
 [8 <./Figure_1.png>] [9 <./Figure_2.png>] [10] [11] [12]
-<pmf_random_state.png, id=199, 867.24pt x 722.7pt>
+<pmf_random_state.png, id=204, 867.24pt x 722.7pt>
 File: pmf_random_state.png Graphic file (type png)
 <use pmf_random_state.png>
-Package pdftex.def Info: pmf_random_state.png  used on input line 269.
+Package pdftex.def Info: pmf_random_state.png  used on input line 273.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
-<pmf_turns_10.png, id=200, 867.24pt x 722.7pt>
+<pmf_turns_10.png, id=205, 867.24pt x 722.7pt>
 File: pmf_turns_10.png Graphic file (type png)
 <use pmf_turns_10.png>
-Package pdftex.def Info: pmf_turns_10.png  used on input line 276.
+Package pdftex.def Info: pmf_turns_10.png  used on input line 280.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [13 <./pmf_random_state.png>]
-<pmf_turns_15.png, id=207, 867.24pt x 722.7pt>
+<pmf_turns_15.png, id=212, 867.24pt x 722.7pt>
 File: pmf_turns_15.png Graphic file (type png)
 <use pmf_turns_15.png>
-Package pdftex.def Info: pmf_turns_15.png  used on input line 283.
+Package pdftex.def Info: pmf_turns_15.png  used on input line 287.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [14 <./pmf_turns_10.png>]
-<pmf_turns_20.png, id=214, 867.24pt x 722.7pt>
+<pmf_turns_20.png, id=219, 867.24pt x 722.7pt>
 File: pmf_turns_20.png Graphic file (type png)
 <use pmf_turns_20.png>
-Package pdftex.def Info: pmf_turns_20.png  used on input line 290.
+Package pdftex.def Info: pmf_turns_20.png  used on input line 294.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [15 <./pmf_turns_15.png>]
-<pmf_turns_25.png, id=221, 867.24pt x 722.7pt>
+<pmf_turns_25.png, id=226, 867.24pt x 722.7pt>
 File: pmf_turns_25.png Graphic file (type png)
 <use pmf_turns_25.png>
-Package pdftex.def Info: pmf_turns_25.png  used on input line 297.
+Package pdftex.def Info: pmf_turns_25.png  used on input line 301.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [16 <./pmf_turns_20.png>]
-<pmf_turns_30.png, id=228, 867.24pt x 722.7pt>
+<pmf_turns_30.png, id=233, 867.24pt x 722.7pt>
 File: pmf_turns_30.png Graphic file (type png)
 <use pmf_turns_30.png>
-Package pdftex.def Info: pmf_turns_30.png  used on input line 304.
+Package pdftex.def Info: pmf_turns_30.png  used on input line 308.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [17 <./pmf_turns_25.png>]
-<pmf_turns_35.png, id=235, 867.24pt x 722.7pt>
+<pmf_turns_35.png, id=240, 867.24pt x 722.7pt>
 File: pmf_turns_35.png Graphic file (type png)
 <use pmf_turns_35.png>
-Package pdftex.def Info: pmf_turns_35.png  used on input line 311.
+Package pdftex.def Info: pmf_turns_35.png  used on input line 315.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [18 <./pmf_turns_30.png>]
-<pmf_turns_40.png, id=243, 867.24pt x 722.7pt>
+<pmf_turns_40.png, id=248, 867.24pt x 722.7pt>
 File: pmf_turns_40.png Graphic file (type png)
 <use pmf_turns_40.png>
-Package pdftex.def Info: pmf_turns_40.png  used on input line 318.
+Package pdftex.def Info: pmf_turns_40.png  used on input line 322.
 (pdftex.def)             Requested size: 433.62pt x 361.3491pt.
  [19 <./pmf_turns_35.png>] [20 <./pmf_turns_40.png>]
-Overfull \hbox (0.58351pt too wide) in paragraph at lines 331--343
+Overfull \hbox (0.58351pt too wide) in paragraph at lines 335--347
  [][] 
  []
 
 
-Overfull \hbox (0.58351pt too wide) in paragraph at lines 348--360
+Overfull \hbox (0.58351pt too wide) in paragraph at lines 352--364
  [][] 
  []
 
 
-Overfull \hbox (0.58351pt too wide) in paragraph at lines 365--377
+Overfull \hbox (0.58351pt too wide) in paragraph at lines 369--381
  [][] 
  []
 
 [21] (./final302project.aux)
 Package rerunfilecheck Info: File `final302project.out' has not changed.
-(rerunfilecheck)             Checksum: E76113CD0549CB74E3B4FD8BCAE0B7A1;3936.
+(rerunfilecheck)             Checksum: 8CA57A812F8E47F17997E8D358B489A6;4052.
  ) 
 Here is how much of TeX's memory you used:
- 12882 strings out of 478994
- 196476 string characters out of 5858183
+ 12884 strings out of 478994
+ 196506 string characters out of 5858183
  624064 words of memory out of 5000000
- 30094 multiletter control sequences out of 15000+600000
+ 30095 multiletter control sequences out of 15000+600000
  410801 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,11n,75p,1037b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -713,10 +713,10 @@ sr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
 ocal/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on final302project.pdf (22 pages, 733788 bytes).
+Output written on final302project.pdf (22 pages, 734562 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 319 PDF objects out of 1000 (max. 8388607)
+ 260 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 240 words of extra memory for PDF output out of 10000 (max. 10000000)
 
