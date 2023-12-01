@@ -51,9 +51,6 @@ def process_file(file_path):
 
     return file_data, expected_total, std_dev_total, var_total, expected_sections, std_dev_sections, var_sections
 
-
-
-
 folder_path = './Solutions'
 all_data = {}
 
@@ -101,7 +98,6 @@ for file_name, data in all_data.items():
 
     plt.tight_layout()
     plt.show()
-
 
 expected_columns = ['File', 'Expected Total'] + [f'Expected {name}' for name in section_names]
 std_dev_columns = ['File', 'Std Dev Total'] + [f'Std Dev {name}' for name in section_names]
