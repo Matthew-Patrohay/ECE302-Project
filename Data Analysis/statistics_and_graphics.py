@@ -103,7 +103,6 @@ for file_name, data in all_data.items():
     plt.show()
 
 
-
 expected_columns = ['File', 'Expected Total'] + [f'Expected {name}' for name in section_names]
 std_dev_columns = ['File', 'Std Dev Total'] + [f'Std Dev {name}' for name in section_names]
 variance_columns = ['File', 'Variance Total'] + [f'Variance {name}' for name in section_names]
