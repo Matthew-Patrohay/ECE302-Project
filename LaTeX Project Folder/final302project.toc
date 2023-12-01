@@ -5,9 +5,18 @@
 \contentsline {section}{\numberline {2}Scrambling Methods}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Random Turns | Scramble Approach}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Random Cube State | Scramble Approach}{4}{subsection.2.2}%
-\contentsline {section}{\numberline {3}Purpose of the Paper}{5}{section.3}%
-\contentsline {section}{\numberline {4}Procedure}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Scramble Generation | Random Turns}{5}{subsection.4.1}%
+\contentsline {section}{\numberline {3}Purpose}{5}{section.3}%
+\contentsline {section}{\numberline {4}Procedure}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Scramble Generation | Random Turns}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Scramble Generation | Random Cube State}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Solve the Cube | Human-Method Program}{6}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Analysis of Solve Data}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Analysis of Solve Data}{7}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Results}{8}{section.5}%
+\contentsline {subsection}{\numberline {5.1}PMF | Random Cube State Scrambles}{8}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}PMF | Random Turn Scrambles}{8}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Data Analysis | Expected Value, Stdev, and Variance}{9}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Discussion}{11}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{12}{section.7}%
+\contentsline {section}{\numberline {8}Appendix}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Detailed PMF Plots}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Precise Expected Value, Stdev, and Variance}{21}{subsection.8.2}%

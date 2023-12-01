@@ -11,7 +11,7 @@
 \usepackage{float}
 \usepackage{multicol}
 \usepackage{enumitem}
-
+\usepackage{arydshln}
 
 \usepackage[citebordercolor={1 1 1}, linkbordercolor={1 1 1}, filebordercolor={1 1 1}]{hyperref}
 
@@ -26,12 +26,10 @@
 	\begin{spacing}{1.0}
 
 		\vspace*{0.6in}
-		\huge{\bfseries Rubik's Cubes}\\
-			[2mm]
-		\huge{\bfseries Influence of Scrambling Method on Solve Difficulty}\\
+		\huge{\bfseries Influence of Scrambling Method on Rubik's Cube Solve Difficulty}\\
 			[10mm]
 		\textsc{\large ECE 302 End of Course Project}\\
-			[2.0in]
+			[2.5in]
 	
 		\line(1,0){450}\\
 			[0.5in]
@@ -99,8 +97,10 @@ This is a significantly more complex scrambling method and is the official scram
     \item \textbf{Inverse the Solution for the Scramble Sequence:} Essentially, if you just undo every move in the solution from step 2, you can go from the solved state back to the original scramble that was generated in step 1 (in this case the random cube state). That is to say, if you reverse the order of the solution (and inverse the direction of the turn | clockwise becomes counterclockwise and vice versa) then you get a scramble that would turn a solved cube into the randomized cube state that was generated in step 1.
 \end{enumerate}
 
-\section{Purpose of the Paper}
+\section{Purpose}
 After over three pages of background on Rubik's Cubes (sorry) it is finally time to talk about what I hope to analyze: There exists a common opinion among speedcubers that the Random Turns approach to scrambling a cube results in significantly easier scrambles than the Random Cube State approach. My goal is to test this perceived difference by simulating the solving process on thousands of solves to see if there is any definitive difference. 
+
+\newpage
 
 \section{Procedure}
 The general approach is to generate 1000 scrambles for each scrambling method, then put each scramble through a human-method Rubik's cube solving program to simulate the number of turns a human would take to solve the cube. 
@@ -124,7 +124,7 @@ E[X] = \sum_{x \in R_X} x \cdot p_X(x)
 
 This equation essentially computes the weighted average of turns needed, where the weights are the probabilities of each turn count occurring. This approach will offer a quantitative measure to compare the efficiency and challenge presented by the 'Random Turns' and 'Random Cube State' methods.
 
-To further deepen the analysis, I will also examine the variance and standard deviation of the number of turns for each method. Variance will provide insight into the consistency of the solve difficulty across scrambles, while standard deviation will offer a measure of how spread out the number of turns is from the average. 
+To further deepen the analysis, I will also examine the variance and standard deviation of the number of turns for each method. Variance will provide insight into the consistency of the solve difficulty across scrambles, while standard deviation will offer a measure of how spread out the number of turns is from the expected value. 
 
 The equations for each of the following values are provided below:
 
@@ -135,10 +135,246 @@ The equations for each of the following values are provided below:
 \text{Stdev} \left( X\right)  =\sqrt{\text{Var(X)} } =\sqrt{E\left[ X^{2}\right]  -\left( E\left[ X\right]  \right)^{2}  } 
 \end{equation}
 
+\newpage
 
 \section{Results}
+In an attempt to organize the results, I will first introduce the probability mass function ($p_X(x)$) of each of the solving methods. Then, I will provide a breakdown of the expected number of solves, standard deviation, and variance of each of the solving methods. 
+
+\subsection{PMF | Random Cube State Scrambles}
+
+You can see in the primary top plot that each scramble took the simulation program typically around 60-80 turns to solve and the general shape of the distribution appears to be quite gaussian. Additionally, in the solve breakdown, you can see that the 'F2L' step of the solving method used by the program (CFOP) requires significantly more turns than the rest of the steps. 
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{Figure_1.png}
+		 \caption{PMF for the Turns Required to Solve 'Random Cube State' Scrambles}
+		 \label{fig:pmf_random_state_png}
+	\end{figure}
+	
+\subsection{PMF | Random Turn Scrambles}
+
+Similarly to the random cube state plots, each scramble took the simulation program typically around 60-80 turns to solve and the general shape of the distribution appears to be quite gaussian. Notable here is that I have chosen to exclude all of the different lengths of random turns, as the most fair direct comparison to the random state scrambles is a length of 20. Therefore, for the sake of brevity, I only included the '20 Random Turns'  scrambles here and all the other pmfs are provided in the appendix if you are curious about them.
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{Figure_2.png}
+		 \caption{PMF for the Turns Required to Solve '20 Random Turns' Scrambles}
+		 \label{fig:pmf_random_tuns_png}
+	\end{figure}
+	
+\subsection{Data Analysis | Expected Value, Stdev, and Variance}
+
+For each of the tables below, the 'Total' column is what we care about most as it represents the overall number of turns required to solve the scramble. The other columns (Cross, F2L, OLL, and PLL) are there to see the data for each subsection of the solve, essentially just a more in depth look at the solve. Also, note that all values were rounded to the nearest integer (both for ease of reading, and because you can't have a half-turn in reality). However, significantly more precise values are provided in the appendix, as the decimal representation is more statistically accurate of the expected value, standard deviation, and variance (despite the data itself being discrete). 
+
+\begin{table}[H]
+\centering
+\caption{Expected Values}
+\begin{tabular}{|p{4cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 70 & 8 & 38 & 11 & 14 \\ \hdashline
+Random Turns 10 & 63 & 6 & 33 & 10 & 13 \\
+Random Turns 15 & 67 & 7 & 36 & 10 & 14 \\
+Random Turns 20 & 69 & 8 & 37 & 11 & 14 \\
+Random Turns 25 & 69 & 8 & 37 & 10 & 14 \\
+Random Turns 30 & 69 & 8 & 37 & 11 & 14 \\
+Random Turns 35 & 69 & 8 & 37 & 10 & 14 \\
+Random Turns 40 & 70 & 8 & 37 & 11 & 14 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Standard Deviations}
+\begin{tabular}{|p{4cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 8 & 2 & 7 & 2 & 3 \\ \hdashline
+Random Turns 10 & 13 & 2 & 9 & 3 & 4 \\
+Random Turns 15 & 9 & 2 & 7 & 2 & 3 \\
+Random Turns 20 & 8 & 2 & 7 & 2 & 3 \\
+Random Turns 25 & 8 & 2 & 7 & 2 & 3 \\
+Random Turns 30 & 8 & 2 & 7 & 2 & 3 \\
+Random Turns 35 & 8 & 2 & 7 & 2 & 3 \\
+Random Turns 40 & 8 & 2 & 7 & 2 & 3 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Variances}
+\begin{tabular}{|p{4cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 61 & 3 & 44 & 5 & 10 \\ \hdashline
+Random Turns 10 & 179 & 4 & 89 & 7 & 14 \\
+Random Turns 15 & 84 & 4 & 55 & 5 & 9 \\
+Random Turns 20 & 63 & 3 & 44 & 5 & 9 \\
+Random Turns 25 & 62 & 3 & 44 & 5 & 11 \\
+Random Turns 30 & 60 & 3 & 43 & 5 & 9 \\
+Random Turns 35 & 59 & 3 & 43 & 4 & 8 \\
+Random Turns 40 & 62 & 3 & 45 & 5 & 9 \\ \hline
+\end{tabular}
+\end{table}
 
 
+\newpage
+
+\section{Discussion}
+
+The most relevant initial observation is the similarity in the expected number of turns needed to solve a Rubik's Cube using the two comparable scramble methods: 'Random State' and '20 Random Turns'. The expected value of 'Random State' was 70, and the expected value of '20 Random Turns' was 69. This would tend to imply that both scrambling methods produce somewhat comparable solves in terms of difficulty. Although, Interestingly, the difficulty of solving appears to decrease when the number of random turns is less than 20. Specifically, the expected number of turns required for solving scrambles of length 10, 15, and 20 random turns are 63, 67, and 69, respectively. This suggests that increasing the number of turns generally raises the solve complexity. However, this increase in difficulty plateaus at around 20 turns, indicating diminishing returns in terms of added complexity.
+
+With regard to the standard deviation and variance of each method, there are similar results. For the 'Random State' and '20 Random Turns' methods, the variances are 61 and 63, respectively, with corresponding standard deviations of 8 for both. These relatively low values indicate a consistent level of difficulty and predictability in the number of turns required to solve the cube. The similarity in these statistics further supports the earlier observation that both methods result in comparable levels of difficulty.
+
+However, when examining the scramble methods with fewer turns, the variance and standard deviation increase significantly. For the 10-turn scramble, the variance is 179 with a standard deviation of 13, while the 15-turn scramble shows a variance of 84 and a standard deviation of 9. These higher values suggest a greater unpredictability in the number of turns needed to solve the cube. Scrambles with fewer turns yield a wider range of possible solve lengths, making the solving process less predictable and, in a sense, potentially easier due to the increased likelihood of encountering a simpler configuration.
+
+In summary, while the 'Random State' and '20 Random Turns' methods present a consistent level of challenge with limited variability, scrambles with fewer turns exhibit greater unpredictability, which can paradoxically result in both easier and more challenging solves, depending on the specific scramble. The data suggests that beyond 20 turns, additional turns do not significantly increase the complexity, indicating a threshold beyond which the difficulty of the puzzle stabilizes.
+
+
+\newpage
+
+\section{Conclusion}
+
+The findings of this study are significant in understanding how the initial scrambling of a Rubik's Cube influences the complexity and predictability of its solution, especially with regard to regulated competitions. 
+
+To recap, this study intended to assess solving complexity based on different scrambling techniques. The primary focus was on comparing the 'Random State' method with the 'Random Turns' method. Additionally, different lengths of the 'Random Turns' method were explored to gain further insight on how it behaves; The most fair 'Random Turns' length for an "apples to apples" comparison between the two methods is 20 (as the typical 'Random State' scramble is also about 20 turns long).
+
+The data clearly indicates that the 'Random State' and '20 Random Turns' methods produce nearly equivalent challenges in terms of solving difficulty. With expected solve lengths of 70 and 69 turns respectively, these methods demonstrate a high level of comparability. This similarity is further reinforced by the close variance and standard deviation values, suggesting a consistent solving experience.
+
+Interestingly, the study also found that the solving difficulty decreases as the number of turns in the 'Random Turns' method is reduced below 20. The increasing variance and standard deviation in the 10 and 15-turn scenarios highlight a greater unpredictability and a broader range of solving difficulties. This unpredictability can occasionally result in simpler solves, offering an intriguing contrast to the more consistent difficulty presented by the longer, 20-turn scrambles and the 'Random State' method.
+
+In conclusion, the 'Random State' and '20 Random Turns' methods both provide a consistent and comparable challenge, whereas fewer turns introduce variability that can both simplify and complicate the solving process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+\section{Appendix}
+
+\subsection{Detailed PMF Plots}
+
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_random_state.png}
+		 \caption{PMF for the Turns Required to Solve 'Random State' Scrambles}
+		 \label{fig:pmf_random_state}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_10.png}
+		 \caption{PMF for the Turns Required to Solve '10 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_10_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_15.png}
+		 \caption{PMF for the Turns Required to Solve '15 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_15_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_20.png}
+		 \caption{PMF for the Turns Required to Solve '20 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_20_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_25.png}
+		 \caption{PMF for the Turns Required to Solve '25 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_25_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_30.png}
+		 \caption{PMF for the Turns Required to Solve '30 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_30_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_35.png}
+		 \caption{PMF for the Turns Required to Solve '35 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_35_plot}
+	\end{figure}
+	
+	\begin{figure}[H]
+		\centering
+		 \includegraphics[width=6in]{pmf_turns_40.png}
+		 \caption{PMF for the Turns Required to Solve '40 Random Turns' Scrambles}
+		 \label{fig:pmf_turns_40_plot}
+	\end{figure}
+	\newpage
+
+
+\subsection{Precise Expected Value, Stdev, and Variance}
+
+
+\begin{table}[H]
+\centering
+\caption{Expected Values}
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 69.881526 & 7.893574 & 37.534137 & 10.524096 & 13.929719 \\ \hdashline
+Random Turns 10 & 63.160000 & 6.385000 & 33.095000 & 10.213000 & 13.467000 \\ 
+Random Turns 15 & 67.489000 & 7.145000 & 36.197000 & 10.398000 & 13.749000 \\ 
+Random Turns 20 & 69.370370 & 7.573574 & 37.311311 & 10.515516 & 13.969970 \\
+Random Turns 25 & 68.832833 & 7.743744 & 36.975976 & 10.418418 & 13.694695 \\ 
+Random Turns 30 & 69.356713 & 7.859719 & 37.044088 & 10.610220 & 13.842685 \\ 
+Random Turns 35 & 69.461771 & 7.840040 & 37.220322 & 10.417505 & 13.983903 \\ 
+Random Turns 40 & 70.126126 & 7.925926 & 37.487487 & 10.614615 & 14.098098 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Standard Deviations}
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 7.840658 & 1.795442 & 6.598180 & 2.249146 & 3.217217 \\ \hdashline
+Random Turns 10 & 13.377608 & 2.070936 & 9.447326 & 2.688797 & 3.714958 \\ 
+Random Turns 15 & 9.176267 & 1.892611 & 7.431029 & 2.223420 & 3.035786 \\ 
+Random Turns 20 & 7.919576 & 1.855205 & 6.654507 & 2.166149 & 3.024276 \\ 
+Random Turns 25 & 7.856131 & 1.744546 & 6.637129 & 2.223071 & 3.309809 \\ 
+Random Turns 30 & 7.771087 & 1.751141 & 6.568131 & 2.159329 & 2.972537 \\ 
+Random Turns 35 & 7.688938 & 1.778354 & 6.536906 & 2.090925 & 2.880892 \\ 
+Random Turns 40 & 7.905606 & 1.779237 & 6.717195 & 2.165483 & 2.942285 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Variances}
+\begin{tabular}{|p{4cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+\hline
+\textbf{Scramble Type} & \textbf{Total} & \textbf{Cross} & \textbf{F2L} & \textbf{OLL} & \textbf{PLL} \\ \hline
+Random State & 61.475924 & 3.223613 & 43.535983 & 5.058656 & 10.350482 \\ \hdashline
+Random Turns 10 & 178.960400 & 4.288775 & 89.251975 & 7.229631 & 13.800911 \\ 
+Random Turns 15 & 84.203879 & 3.581975 & 55.220191 & 4.943596 & 9.215999 \\ 
+Random Turns 20 & 62.719683 & 3.441784 & 44.282465 & 4.692202 & 9.146245 \\ 
+Random Turns 25 & 61.718802 & 3.043442 & 44.051475 & 4.942043 & 10.954837 \\ 
+Random Turns 30 & 60.389790 & 3.066494 & 43.140341 & 4.662701 & 8.835974 \\ 
+Random Turns 35 & 59.119766 & 3.162542 & 42.731136 & 4.371967 & 8.299540 \\ 
+Random Turns 40 & 62.498607 & 3.165684 & 45.120714 & 4.689316 & 8.657043 \\ \hline
+\end{tabular}
+\end{table}
 
 
 \end{document}
